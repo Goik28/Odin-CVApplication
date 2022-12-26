@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Education } from "./components/Education";
 import { PersonalInfo } from "./components/PersonalInfo";
+import { Education } from "./components/Education";
+import { Professional } from "./components/Professional";
 
 export class App extends Component {
   constructor(props) {
@@ -13,11 +14,15 @@ export class App extends Component {
         description: "",
       },
       education: [],
+      professional: [],
     };
     this.onPersonalInfoChange = this.onPersonalInfoChange.bind(this);
     this.addEducationInfo = this.addEducationInfo.bind(this);
     this.onEducationInfoChange = this.onEducationInfoChange.bind(this);
     this.removeEducationInfo = this.removeEducationInfo.bind(this);
+    this.addProfessionalInfo = this.addProfessionalInfo.bind(this);
+    this.onProfessionalInfoChange = this.onProfessionalInfoChange.bind(this);
+    this.removeProfessionalInfo = this.removeProfessionalInfo.bind(this);
   }
 
   onPersonalInfoChange(key, value) {
@@ -51,6 +56,31 @@ export class App extends Component {
     }
   }
 
+  addProfessionalInfo(info) {
+    this.setState({ professional: this.state.professional.concat([info]) });
+  }
+
+  onProfessionalInfoChange(index, key, value) {
+    const newProfessional = [...this.state.professional];
+    newProfessional[index][key] = value;
+    this.setState({ professional: newProfessional });
+  }
+
+  removeProfessionalInfo(index) {
+    if (index == 0) {
+      const newProfessional = this.state.professional.slice(index + 1);
+      return this.setState({ professional: newProfessional });
+    } else if (index == this.state.professional.length - 1) {
+      const newProfessional = this.state.professional.slice(0, -1);
+      return this.setState({ professional: newProfessional });
+    } else {
+      const newProfessional = this.state.professional
+        .slice(0, index)
+        .concat(this.state.professional.slice(index + 1));
+      return this.setState({ professional: newProfessional });
+    }
+  }
+
   render() {
     return (
       <main>
@@ -64,6 +94,12 @@ export class App extends Component {
           onEducationInfoChange={this.onEducationInfoChange}
           removeEducationInfo={this.removeEducationInfo}
         ></Education>
+        <Professional
+          professional={this.state.professional}
+          addProfessionalInfo={this.addProfessionalInfo}
+          onProfessionalInfoChange={this.onProfessionalInfoChange}
+          removeProfessionalInfo={this.removeProfessionalInfo}
+        ></Professional>
       </main>
     );
   }
@@ -81,5 +117,3 @@ export function Footer() {
     </footer>
   );
 }
-
-//<Professional />

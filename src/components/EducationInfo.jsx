@@ -51,7 +51,6 @@ export class EducationInfo extends Component {
           <label htmlFor="fromDate">From:</label>
           <input
             type="date"
-            placeholder="2018"
             name="fromDate"
             value={this.props.educationInfo.fromDate}
             onChange={this.handleChange}
@@ -59,7 +58,6 @@ export class EducationInfo extends Component {
           <label htmlFor="toDate">To:</label>
           <input
             type="date"
-            placeholder="2022"
             name="toDate"
             value={this.props.educationInfo.toDate}
             onChange={this.handleChange}
