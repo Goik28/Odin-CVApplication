@@ -3,15 +3,21 @@ import React, { Component } from "react";
 export class EducationInfo extends Component {
   constructor(props) {
     super(props);
+    this.removeEducationInfo = this.removeEducationInfo.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  removeEducationInfo(){
-    
+  removeEducationInfo(e) {
+    e.preventDefault();
+    this.props.onRemoveEducationInfo(this.props.educationInfoId);
   }
 
   handleChange(event) {
-    this.props.onPersonalInfoChange(event.target.name, event.target.value);
+    this.props.onEducationInfoChange(
+      this.props.educationInfoId,
+      event.target.name,
+      event.target.value
+    );
   }
 
   render() {
@@ -38,7 +44,7 @@ export class EducationInfo extends Component {
           <input
             type="text"
             placeholder="Software Engineering"
-            name="email"
+            name="subject"
             value={this.props.educationInfo.subject}
             onChange={this.handleChange}
           />
@@ -58,8 +64,8 @@ export class EducationInfo extends Component {
             value={this.props.educationInfo.toDate}
             onChange={this.handleChange}
           />
+          <button onClick={this.removeEducationInfo}>Delete</button>
         </fieldset>
-        <button onClick={this.removeEducationInfo}>Delete</button>
       </form>
     );
   }

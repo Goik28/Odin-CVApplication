@@ -12,7 +12,7 @@ export class App extends Component {
         email: "",
         description: "",
       },
-      education: [{ educationInfo: "" }],
+      education: [],
     };
     this.onPersonalInfoChange = this.onPersonalInfoChange.bind(this);
     this.addEducationInfo = this.addEducationInfo.bind(this);
@@ -61,7 +61,7 @@ export class App extends Component {
         <Education
           education={this.state.education}
           addEducationInfo={this.addEducationInfo}
-          onEducationInfoChange={this.addEducationInfo}
+          onEducationInfoChange={this.onEducationInfoChange}
           removeEducationInfo={this.removeEducationInfo}
         ></Education>
       </main>
