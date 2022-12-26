@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { PersonalInfo } from "./components/PersonalInfo";
 import { Education } from "./components/Education";
 import { Professional } from "./components/Professional";
+import { CvFinal } from "./components/CvFinal";
 
 export class App extends Component {
   constructor(props) {
@@ -100,6 +101,7 @@ export class App extends Component {
           onProfessionalInfoChange={this.onProfessionalInfoChange}
           removeProfessionalInfo={this.removeProfessionalInfo}
         ></Professional>
+        <CvFinal cvInfo={this.state}></CvFinal>
       </main>
     );
   }
