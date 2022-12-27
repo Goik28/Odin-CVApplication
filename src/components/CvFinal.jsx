@@ -4,6 +4,7 @@ export class CvFinal extends Component {
   constructor(props) {
     super(props);
     this.populateEducation = this.populateEducation.bind(this);
+    this.populateExperience = this.populateExperience.bind(this);
   }
 
   populateEducation() {
@@ -15,8 +16,25 @@ export class CvFinal extends Component {
               {value.subject} at {value.institutionName}
             </li>
             <li>
-              {value.degree} - from {value.fromDate.substr(0,4)} to {value.toDate.substr(0,4)}
+              {value.degree} - from {value.fromDate.substr(0, 4)} to{" "}
+              {value.toDate.substr(0, 4)}
             </li>
+          </ul>
+        </li>
+      );
+    });
+  }
+
+  populateExperience() {
+    return this.props.cvInfo.professional.map((value, index) => {
+      return (
+        <li key={index}>
+          <ul>
+            <li>
+              {value.positionTitle} at {value.companyName} - from{" "}
+              {value.fromDate.substr(0, 4)} to {value.toDate.substr(0, 4)}
+            </li>
+            <li>{value.mainResponsibility}</li>
           </ul>
         </li>
       );
@@ -42,7 +60,7 @@ export class CvFinal extends Component {
         </div>
         <div className="experience">
           Experience
-          <ul>{}</ul>
+          <ul>{this.populateExperience()}</ul>
         </div>
       </div>
     );
