@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/CvFinal.css"
 
 export class CvFinal extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ export class CvFinal extends Component {
 
   render() {
     return (
-      <div>
+      <div className="cvFinal">
         <div className="personalInfo">
           <div className="who">
             <h1>{this.props.cvInfo.personalInfo.fullName}</h1>
