@@ -3,6 +3,7 @@ import { PersonalInfo } from "./components/PersonalInfo";
 import { Education } from "./components/Education";
 import { Professional } from "./components/Professional";
 import { CvFinal } from "./components/CvFinal";
+import "./app.css";
 
 export class App extends Component {
   constructor(props) {
@@ -114,7 +115,7 @@ export function Header() {
 export function Footer() {
   return (
     <footer>
-      Created by<a href="https://github.com/Goik28"> Goik28 </a>for the
+      Created by&nbsp;<a href="https://github.com/Goik28">Goik28</a>&nbsp;for the
       CV-Application project on The Odin Project course
     </footer>
   );

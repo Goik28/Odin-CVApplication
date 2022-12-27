@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { EducationInfo } from "./EducationInfo";
+import "../styles/Education.css"
 
 export class Education extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ export class Education extends Component {
 
   render() {
     return (
-      <fieldset>
+      <fieldset className="education-fieldset">
         <legend>Education</legend>
         <button onClick={this.addEducationInfo}>Add Education Info</button>
         <ol>{this.populateEducationInfo()}</ol>

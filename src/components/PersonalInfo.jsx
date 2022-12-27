@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/PersonalInfo.css";
 
 export class PersonalInfo extends Component {
   constructor(props) {
@@ -12,10 +13,10 @@ export class PersonalInfo extends Component {
 
   render() {
     return (
-      <form action="">
-        <fieldset>
-          <legend>Personal Information</legend>
-          <label htmlFor="fullName">Full Name:</label>
+      <fieldset className="personalInfo-fieldset">
+        <legend>Personal Information</legend>
+        <div className="contact">
+          <label htmlFor="fullName">Name:</label>
           <input
             type="text"
             placeholder="Jhon Doe"
@@ -39,15 +40,15 @@ export class PersonalInfo extends Component {
             value={this.props.personalInfo.email}
             onChange={this.handleChange}
           />
-          <label htmlFor="description">Description:</label>
-          <textarea
-            placeholder="Your description here..."
-            name="description"
-            value={this.props.personalInfo.description}
-            onChange={this.handleChange}
-          />
-        </fieldset>
-      </form>
+        </div>
+        <label htmlFor="description">Description:</label>
+        <textarea
+          placeholder="Your description here..."
+          name="description"
+          value={this.props.personalInfo.description}
+          onChange={this.handleChange}
+        />
+      </fieldset>
     );
   }
 }

@@ -1,0 +1,22 @@
+.professional-fieldset{
+    padding: 5px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.15rem;
+    height: 312px;
+    overflow-y: auto;
+}
+
+.professional-fieldset>legend{
+    font-size: 2rem;
+}
+
+.professional-fieldset>button{
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+}
+
+.professional-fieldset>ol>li:last-child{
+    border-bottom: 1px solid #94a3b8;
+    padding-bottom: 10px;
+}

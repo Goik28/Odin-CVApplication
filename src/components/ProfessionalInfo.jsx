@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../styles/ProfessionalInfo.css";
 
 export class ProfessionalInfo extends Component {
   constructor(props) {
@@ -22,9 +23,9 @@ export class ProfessionalInfo extends Component {
 
   render() {
     return (
-      <form action="">
-        <fieldset>
-          <label htmlFor="companyName">Company Name:</label>
+      <li className="professionalInfo-listItem">
+        <div>
+          <label htmlFor="companyName">Company:</label>
           <input
             type="text"
             placeholder="The Odin Project inc."
@@ -32,7 +33,7 @@ export class ProfessionalInfo extends Component {
             value={this.props.professionalInfo.companyName}
             onChange={this.handleChange}
           />
-          <label htmlFor="positionTitle">Position Title:</label>
+          <label htmlFor="positionTitle">Position:</label>
           <input
             type="text"
             placeholder="Software Engineer"
@@ -40,30 +41,34 @@ export class ProfessionalInfo extends Component {
             value={this.props.professionalInfo.positionTitle}
             onChange={this.handleChange}
           />
+          <label htmlFor="fromDate">From:</label>
+          <input
+          id="fromDate"
+            type="month"
+            name="fromDate"
+            value={this.props.professionalInfo.fromDate}
+            onChange={this.handleChange}
+          />
+        </div>
+        <div>
           <label htmlFor="mainResponsibility">Main Responsibility:</label>
-          <textarea
+          <input
             placeholder="Full-stack development, requirements gathering, stakeholders representation..."
             name="mainResponsibility"
             value={this.props.professionalInfo.mainResponsibility}
             onChange={this.handleChange}
           />
-          <label htmlFor="fromDate">From:</label>
-          <input
-            type="date"
-            name="fromDate"
-            value={this.props.professionalInfo.fromDate}
-            onChange={this.handleChange}
-          />
           <label htmlFor="toDate">To:</label>
           <input
-            type="date"
+          id="toDate"
+            type="month"
             name="toDate"
             value={this.props.professionalInfo.toDate}
             onChange={this.handleChange}
           />
-          <button onClick={this.removeProfessionalInfo}>Delete</button>
-        </fieldset>
-      </form>
+        </div>
+        <button onClick={this.removeProfessionalInfo}>Delete</button>
+      </li>
     );
   }
 }

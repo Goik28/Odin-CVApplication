@@ -1,0 +1,32 @@
+.educationInfo-listItem {
+  list-style: none;
+  margin-top: 5px;
+  padding: 5px 0;
+  border-top: 1px solid #94a3b8;
+  display: flex;
+  flex-direction: column;
+}
+
+.educationInfo-listItem > div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.educationInfo-listItem > div > input {
+  flex: auto;
+  margin-left: 5px;
+  font-size: 0.9rem;
+}
+
+.educationInfo-listItem > div > label {
+  margin-left: 5px;
+}
+
+.educationInfo-listItem > div > label:first-child {
+  margin-left: 0px;
+}
+
+.educationInfo-listItem > button{
+    font-size: 1.15rem;
+}

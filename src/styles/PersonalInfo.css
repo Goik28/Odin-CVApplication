@@ -1,0 +1,36 @@
+.personalInfo-fieldset{
+    padding: 5px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.15rem;
+}
+
+.personalInfo-fieldset>legend{
+    font-size: 2rem;
+}
+
+.contact{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.contact>input{
+    flex: auto;
+    margin-left: 5px;
+    font-size: 0.9rem;
+}
+
+.contact>label:first-child{    
+    margin-left: 0px;
+}
+
+.contact>label{    
+    margin-left: 5px;
+}
+
+.personalInfo-fieldset>textarea{
+    height: 75px;
+    font-size: 0.9rem;
+    resize: none;
+}
